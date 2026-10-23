@@ -1,3 +1,4 @@
+import java.awt.event.KeyEvent;
 
 public class JFramePassGameOne extends javax.swing.JFrame {
     
@@ -33,6 +34,7 @@ public class JFramePassGameOne extends javax.swing.JFrame {
         jProgressBar1 = new javax.swing.JProgressBar();
         jScrollPane2 = new javax.swing.JScrollPane();
         outputArea = new javax.swing.JTextArea();
+        resetButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -54,7 +56,7 @@ public class JFramePassGameOne extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         jLabel1.setText("Password .06");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel2.setText("Enter a password below and validate using the \"Check\" button");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -66,7 +68,7 @@ public class JFramePassGameOne extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,17 +87,32 @@ public class JFramePassGameOne extends javax.swing.JFrame {
         passwordField.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         passwordField.setText("Enter password");
         passwordField.addActionListener(this::passwordFieldActionPerformed);
+        passwordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                passwordFieldKeyPressed(evt);
+            }
+        });
 
         checkButton.setBackground(new java.awt.Color(208, 174, 237));
         checkButton.setFont(new java.awt.Font("OCR A Extended", 1, 12)); // NOI18N
         checkButton.setText("Check");
         checkButton.addActionListener(this::checkButtonActionPerformed);
+        checkButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                checkButtonKeyPressed(evt);
+            }
+        });
 
         outputArea.setBackground(new java.awt.Color(249, 246, 252));
         outputArea.setColumns(20);
         outputArea.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
         outputArea.setRows(5);
         jScrollPane2.setViewportView(outputArea);
+
+        resetButton.setBackground(new java.awt.Color(208, 174, 237));
+        resetButton.setFont(new java.awt.Font("OCR A Extended", 0, 12)); // NOI18N
+        resetButton.setText("Reset");
+        resetButton.addActionListener(this::resetButtonActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -105,20 +122,24 @@ public class JFramePassGameOne extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(passwordField)
-                        .addGap(18, 18, 18)
-                        .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2))
+                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(resetButton)
+                        .addGap(0, 10, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                    .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -155,9 +176,24 @@ public class JFramePassGameOne extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordFieldActionPerformed
 
     private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
-        // TODO add your handling code here:
         checkPassword();        
     }//GEN-LAST:event_checkButtonActionPerformed
+
+    private void checkButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_checkButtonKeyPressed
+        //
+    }//GEN-LAST:event_checkButtonKeyPressed
+
+    private void passwordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            checkPassword();
+        }
+    }//GEN-LAST:event_passwordFieldKeyPressed
+
+    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
+        // TODO add your handling code here:
+        passwordField.setText("");
+        checkPassword();
+    }//GEN-LAST:event_resetButtonActionPerformed
     
     private PassCheckOne checker = new PassCheckOne();
     private PassGameOne game = new PassGameOne();
@@ -219,6 +255,7 @@ public class JFramePassGameOne extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea outputArea;
     private javax.swing.JTextField passwordField;
+    private javax.swing.JButton resetButton;
     // End of variables declaration//GEN-END:variables
 
 }
