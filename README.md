@@ -1,4 +1,5 @@
 # Password-game
+_Password .06_
 
 Project includes the following files:
 1. JFramePassGameOne - This is the GUI and where the game is played.
@@ -7,5 +8,5 @@ This file calls files 2 and 3.
 The input is passed through all the checking methods and returns the validity.
 3. PassCheckOne - This file checks if there is any conflict between rules.
 
-The goal of this game is mostly to challenge the player to be as creative as possible. 
+**The goal** of a password game is mostly to challenge the player to be as creative as possible. 
 There are many possibilities to add even more rules to the basis, which will make it harder to conform to all rules.
