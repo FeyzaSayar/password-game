@@ -1,9 +1,4 @@
 
-/**
- *
- * @author fenna
- */
-
 public class PassCheckOne {
     
     public boolean conflict = false;

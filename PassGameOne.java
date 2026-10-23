@@ -1,9 +1,4 @@
 
-/**
- *
- * @author fenna
- */
-
 public class PassGameOne {
     
     //how many rules in total - change
@@ -46,6 +41,7 @@ public class PassGameOne {
         }
         return true;
     }
+    //a|e|i|o|u checks if there's any lowercase vowels, this isn't allowed
     
     //how many rules the input passes for progress bar
     public int countPassed(String input) {
@@ -93,5 +89,4 @@ public class PassGameOne {
         }
         return "Valid password!";
     }
-    
 }
