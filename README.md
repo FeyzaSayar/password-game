@@ -11,6 +11,8 @@ The project also includes a .form file with the same name, this is used for the 
 The input is passed through all the checking methods and returns the validity.
 3. PassCheckOne - This file checks if there is any conflict between rules.
 _This file is not fully needed yet, because conflict between rules does not exist with the original 6 implemented rules._
+
+Additionally, the project also includes the backlog in form of .md document, a pdf showing the right layout for the first backlog entry, and a pdf with the reflection of our advanced topics
 _________________________________________
 
 **GUI setup**
