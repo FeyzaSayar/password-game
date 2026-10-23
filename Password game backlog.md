@@ -1,6 +1,6 @@
 # Password game backlog
 
-*External links (information sources) are not included in this .md document*
+*The external links can not be opened directly from this .md document*
 
 
 
