@@ -9,6 +9,7 @@ This file calls files 2 and 3.
 2. PassGameOne - This file includes all methods for checking the input.
 The input is passed through all the checking methods and returns the validity.
 3. PassCheckOne - This file checks if there is any conflict between rules.
+_This file is not fully needed yet, because conflict between rules does not exist with the original 6 implemented rules._
 _________________________________________
 
 **GUI setup**
@@ -17,6 +18,12 @@ _________________________________________
 - The output field shows the first rule that is invalid. (_When rule 1 is validated, rule 2 is shown, and so on_)
 - The progress bar shows the user how close they are.
 
-**Start up project**
-1. Download all files and make sure that they are in the same folder
-2. 
+**To start up project**
+1. Programs: Make sure Java and Java Swing are runnable on the device. NetBeans IDE was used to creat this project, so it is advised to open the project in this application.
+2. Download the zip folder and extract the files.
+3. Open the project in Java IDE, and make sure all files are placed in the same folder/package.
+4. Compile and run the project. The main() method that runs the project is located in JFramePassGameOne.
+
+
+
+
