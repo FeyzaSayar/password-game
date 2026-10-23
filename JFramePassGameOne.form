@@ -78,7 +78,7 @@
                       <Component id="jLabel1" min="-2" pref="98" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="96" max="32767" attributes="0"/>
+                  <EmptySpace pref="61" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -97,12 +97,12 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Password 3/22"/>
+            <Property name="text" type="java.lang.String" value="Password .06"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="*don&apos;t share private information like real life passwords."/>
+            <Property name="text" type="java.lang.String" value="Enter a password in the box below and use the &quot;Check&quot; button"/>
           </Properties>
         </Component>
       </SubComponents>
