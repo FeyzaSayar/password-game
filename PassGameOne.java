@@ -82,7 +82,8 @@ public class PassGameOne {
             return "Rule 4: The password must include a season";
         }
         if (!ruleFive(input)) {
-            return "Rule 5: Password must include a country using the UTC+5 time";
+            return "Rule 5: Password must include a country listed "
+                    + "as using the UTC+5 time";
         }
         if (!ruleSix(input)) {
             return "Rule 6: All vowels in the password must be capitalised";
